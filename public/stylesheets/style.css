@@ -1,10 +1,15 @@
 /*author:starttemplate*/
 /*reference site : starttemplate.com*/
 body {
-  background-image:url('http://demo.starttemplate.com/unique-login-form/img/background.jpg');
+  background-image: url('https://i.pinimg.com/564x/6a/11/1e/6a111e2993bd18032c51e7c0e2890bc9.jpg');
   background-position:center;
   background-size:cover;
+  background-repeat: no-repeat;
+  image-resolution: 100%;
   
+  flex-direction: row;
+  align-content: center;
+
   -webkit-font-smoothing: antialiased;
   font: normal 14px Roboto,arial,sans-serif;
   font-family: 'Dancing Script', cursive!important;
@@ -22,7 +27,8 @@ body {
 }
 
 .form-login {
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(42, 42, 43, 0.7);
+  width: 400px;
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -32,7 +38,7 @@ body {
   border-width: 5px;
   color:white;
   box-shadow:0 1px 0 #cfcfcf;
-  align-content: center;
+  
 }
 
 @media (max-width: 500px) {
