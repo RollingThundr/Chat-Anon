@@ -6,10 +6,11 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   image-resolution: 100%;
+  
 
   -webkit-font-smoothing: antialiased;
   font: normal 14px Roboto,arial,sans-serif;
-  font-family: 'Press Start 2P', cursive;
+  
 }
 
 
@@ -27,7 +28,8 @@ body {
   background-color: rgba(42, 42, 43, 0.7);
   width: 400px;
   height: 350px;
-  padding-top: 10px;
+  margin-top: 50px;
+  padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -35,7 +37,7 @@ body {
   border-color:#d2d2d2;
   border-width: 5px;
   color:white;
-  box-shadow:0 1px 0 #cfcfcf;
+  font-family: 'Press Start 2P', cursive;
 }
 
 @media (max-width: 500px) {
@@ -94,4 +96,12 @@ h4 {
   font-size: 30rem;
   font-weight: bold;
   text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.66);
+}
+
+
+/*index page */ 
+
+.base{
+  background-color: black;
+
 }
