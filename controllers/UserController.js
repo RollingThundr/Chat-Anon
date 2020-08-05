@@ -24,6 +24,7 @@ class UserController{
         AraDTApp.post('/login', this.login);
         AraDTApp.get('/logout', this.logout);
         AraDTApp.get('/login', this.getLogin);
+        AraDTApp.get('/register', this.getRegister);
         AraDTApp.get('/account', this.getAccount);
         AraDTApp.post('/account', this.updateAccount);
         AraDTApp.post('/password', this.updatePassword);
@@ -117,6 +118,10 @@ class UserController{
 
     getLogin(request, response, next) {
         response.render('login');
+    }
+
+    getRegister(request, response, next) {
+        response.render('register');
     }
 
     /* YOU NEED TO ADD COMMENTS FROM HERE ON */
