@@ -38,6 +38,10 @@ class Router{
      */
     addBaseRoutes() {
         AraDTApp.get('/', this.index);
+        AraDTApp.get('/register', this.signup);
+        signup(request, response){
+            response.render('register');
+        }
     }
 
 
@@ -78,6 +82,8 @@ class Router{
             response.render('error');
         });
     }
+
+    addBaseRoutes()
 
 }
 module.exports = Router;

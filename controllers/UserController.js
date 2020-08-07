@@ -66,6 +66,7 @@ class UserController{
      * @returns {Object}    response.redirect object
      */
     login = async (request, response) => {
+        console.log(request.body);
         // Try to see if form submission is valid
         try{
             await AraDTUserModel.login(request, response)
@@ -98,6 +99,7 @@ class UserController{
      * @returns {Object}    response.redirect object
      */
     register = async (request, response) => {
+        console.log(request.body);
         // Try to see if form submission is valid
         try{
             await AraDTUserModel.register(request, response)
@@ -107,12 +109,12 @@ class UserController{
                 }).catch((error) => {
                     // Firebase registration has failed, so return Firebase errors
                     request.session.errors.register = [error.message];
-                    response.redirect('/');
+                    response.redirect('/register');
                 });
         } catch(errors) {
             // Form has failed validation, so return errors
             request.session.errors.register = errors;
-            response.redirect('/');
+            response.redirect('/register');
         }
     };
 

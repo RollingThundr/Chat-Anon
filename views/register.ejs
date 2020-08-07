@@ -31,18 +31,18 @@
 
         <!-- Page Content -->
         <div class="container flex align-items-center text-center">
-                    <div class="form-login mx-auto"></br>
+                    <div class="form-register mx-auto"></br>
                         <h4>REGISTRATION</h4>
                         </br>
-                        <input type="text" id="userEmail" class="form-control input-sm chat-input" placeholder="email"/>
-                        </br></br>
-                        <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password"/>
-                        </br></br>
-                        <div class="wrapper">
-                                <span class="group-btn">
-                                    <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-                                </span>
-                        </div>
+                        <form action="/register" method="post">
+                            <input type="email" name="email" placeholder="Email">
+                            <br><br><br>
+                            <input type="password" name="password" placeholder="Password">
+                            <br><br><br>
+                            <input type="password" name="passwordConfirm" placeholder="Confirm Password">
+                            <br><br><br>
+                            <input type="submit" id="button" value="register">
+                        </form>
 
                         <br>
                         
