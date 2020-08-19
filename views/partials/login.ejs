@@ -32,6 +32,13 @@
                     <div class="form-login mx-auto"></br>
                         <h4>Chat Anon Login</h4>
                         </br>
+
+                        <% if (locals.errors && locals.errors.login) { %>
+                            <% locals.errors.login.forEach(function(error) { %>
+                                <p class="alert alert-primary" role="alert"><%= error %></p>
+                            <% }) %>
+                        <% } %>
+
                         <form action="/login" method="post">
                             <input type="email" name="email" placeholder="Email">
                         <br></br><br>
@@ -47,5 +54,8 @@
                     </div>
                 </br></br></br>
         </div>
+
+       
+              
     </body>
 </html>

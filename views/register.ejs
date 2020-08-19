@@ -32,8 +32,17 @@
         <!-- Page Content -->
         <div class="container flex align-items-center text-center">
                     <div class="form-register mx-auto"></br>
-                        <h4>REGISTRATION</h4>
+                        <div class="title">
+                            <h4>REGISTRATION</h4>
+                        </div>
+                        
                         </br>
+                        <% if (locals.errors && locals.errors.register) { %>
+                            <% locals.errors.register.forEach(function(error) { %>
+                                <p class="alert alert-primary" role="alert"><%= error %></p>
+                            <% }) %>
+                        <% } %>
+
                         <form action="/register" method="post">
                             <input type="email" name="email" placeholder="Email">
                             <br><br><br>

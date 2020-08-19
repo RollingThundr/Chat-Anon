@@ -1,10 +1,7 @@
 /*author:starttemplate*/
 /*reference site : starttemplate.com*/
 body {
-  background-image: url('/images/background.jpg');
-  background-position:center;
-  background-size:cover;
-  background-repeat: no-repeat;
+  background: rgba(0, 0, 0, 0) url('/images/background.jpg') repeat fixed center center / cover;
   image-resolution: 100%;
   
 
@@ -55,6 +52,9 @@ body {
   
 }
 
+.title {
+  color: white;
+}
 
 
 @media (max-width: 500px) {
@@ -113,4 +113,48 @@ h4 {
   font-size: 30rem;
   font-weight: bold;
   text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.66);
+}
+
+
+/*account*/
+
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+* {box-sizing: border-box;}
+​
+.input[type=text], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
+}
+​
+.input[type=submit] {
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+​
+.input[type=submit]:hover {
+background-color: white;
+}
+​
+.container {
+border-radius: 5px;
+padding: 20px;
+}
+
+#mainAccount { 
+background-color: black;
+height: 100%;
+width: 1000px;
+
 }

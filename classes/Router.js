@@ -1,4 +1,5 @@
 var UserController = require('../controllers/UserController');
+var ChannelController = require('../controllers/ChannelController');
 var createError = require('http-errors');
 
 /**
@@ -36,21 +37,35 @@ class Router{
      * Adds simple routes that only require a view, 
      * no controllers or models
      */
-    addBaseRoutes() {
+    addBaseRoutes(){
         AraDTApp.get('/', this.index);
-        AraDTApp.get('/register', this.signup);
-        signup(request, response){
-            response.render('register');
-        }
+        AraDTApp.get('/login', this.login);
+        AraDTApp.get('/register', this.register);
+        AraDTApp.get('/account', this.account);
     }
 
+    login(request, response){
+        response.render('login')
+    }
 
+    register(request, response){
+        response.render('register')
+    }
+
+    signup(request, response){
+        response.render('register')
+    }
+
+    account(request, response){
+        response.render('account')
+    }
     /**
      * Add controllers for key models, 
      * e.g. Users, Channels, Messages
      */
     addControllers() {
         var userController = new UserController();
+        var channelController = new ChannelController();
     }
 
     // Renders home page ./views/index.ejs
@@ -82,8 +97,5 @@ class Router{
             response.render('error');
         });
     }
-
-    addBaseRoutes()
-
 }
 module.exports = Router;
