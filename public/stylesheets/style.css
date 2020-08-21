@@ -103,6 +103,11 @@ h4 {
 }
 
 
+.btn{
+  background-color: black;
+  color: white;
+}
+
 .error404{
   text-align: center;
 }
@@ -157,4 +162,47 @@ background-color: black;
 height: 100%;
 width: 1000px;
 
+}
+
+/*index*/
+
+.img{
+  padding-left: 100px;
+}
+
+#main{
+  background-color: black;
+  height: 900px;
+  width: 800px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+}
+
+#sidebar{
+  background-color: black;
+  height: 900px;
+  width: 800px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+}
+
+.divider{
+  background-color: #c9c0b9;
+  height: 900px;
+  width: 2px;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
 }

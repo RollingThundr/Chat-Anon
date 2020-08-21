@@ -30,7 +30,10 @@
         <!-- Page Content -->
         <div class="container flex align-items-center text-center">
                     <div class="form-login mx-auto"></br>
-                        <h4>Chat Anon Login</h4>
+                        <div class="title">
+                            <h4>Chat Anon Login</h4>
+                        </div>
+                        
                         </br>
 
                         <% if (locals.errors && locals.errors.login) { %>
@@ -44,12 +47,12 @@
                         <br></br><br>
                             <input type="password" name="password" placeholder="Password">
                         <br></br><br>
-                            <button type="submit">Login</button>
+                          <input type="submit" class="btn btn-info btn-md" value="login">
                         </form>
                         <br></br>
 
                         <div>
-                            <a href="localhost:3000/register" rel="dofollow">register here</a>
+                            <a href="/register" class="text-info">register here</a>
                         </div>
                     </div>
                 </br></br></br>
