@@ -91,6 +91,8 @@ class UserModel{
             await AraDTDatabase.firebase.auth()
                 .signInWithEmailAndPassword(user.email, user.password)
                 .then((data) => {
+                    console.log('#####LOGIN####');
+                    console.log(data);
                     // Promise to return token for the next stage
                     return data.user.getIdToken();
                 })
@@ -100,6 +102,8 @@ class UserModel{
                     response.locals.loggedin = true;
                 })
                 .catch((error) => {
+                    console.log('#####ERROR####');
+                    console.log(error);
                     // Throw login error from Firebase to calling method
                     throw new Error(error);
                 })

@@ -29,36 +29,37 @@
 
         <!-- Page Content -->
         <div class="container flex align-items-center text-center">
-                    <div class="form-login mx-auto"></br>
-                        <div class="title">
-                            <h4>Chat Anon Login</h4>
-                        </div>
+            <div class="form-login mx-auto"></br>
+                <div class="title">
+                    <h4>Chat Anon Login</h4>
+                </div>
                         
-                        </br>
+                </br>
 
-                        <% if (locals.errors && locals.errors.login) { %>
-                            <% locals.errors.login.forEach(function(error) { %>
-                                <p class="alert alert-primary" role="alert"><%= error %></p>
-                            <% }) %>
-                        <% } %>
+                <% if (locals.errors && locals.errors.login) { %>
+                    <% locals.errors.login.forEach(function(error) { %>
+                       <p class="alert alert-primary" role="alert"><%= error %></p>
+                    <% }) %>
+                <% } %>
 
-                        <form action="/login" method="post">
-                            <input type="email" name="email" placeholder="Email">
-                        <br></br><br>
-                            <input type="password" name="password" placeholder="Password">
-                        <br></br><br>
-                          <input type="submit" class="btn btn-info btn-md" value="login">
-                        </form>
-                        <br></br>
+                <form action="/login" method="post">
+                    <input type="email" name="email" placeholder="Email">
+                    <br></br><br>
+                    <input type="password" name="password" placeholder="Password">
+                    <br></br><br>
+                    <input type="submit" class="btn btn-info btn-md" value="login">
+                </form>
+                <br></br>
 
-                        <div>
-                            <a href="/register" class="text-info">register here</a>
-                        </div>
-                    </div>
-                </br></br></br>
+                <div>
+                    <a href="/register" class="text-info">register here</a>
+                </div>
+            </div>
+                
         </div>
 
        
               
     </body>
 </html>
+

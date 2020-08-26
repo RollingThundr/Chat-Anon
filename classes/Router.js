@@ -39,21 +39,6 @@ class Router{
      */
     addBaseRoutes(){
         AraDTApp.get('/', this.index);
-        AraDTApp.get('/login', this.login);
-        AraDTApp.get('/register', this.register);
-        AraDTApp.get('/account', this.account);
-    }
-
-    login(request, response){
-        response.render('login')
-    }
-
-    register(request, response){
-        response.render('register')
-    }
-
-    signup(request, response){
-        response.render('register')
     }
 
     account(request, response){
