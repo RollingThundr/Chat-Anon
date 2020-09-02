@@ -44,6 +44,7 @@ class Router{
     account(request, response){
         response.render('account')
     }
+     
     /**
      * Add controllers for key models, 
      * e.g. Users, Channels, Messages

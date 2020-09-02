@@ -54,6 +54,7 @@ body {
 
 .title {
   color: white;
+  font-family: 'Press Start 2P', cursive;
 }
 
 
@@ -164,7 +165,28 @@ width: 1000px;
 
 }
 
-/*index*/
+.form-control-label {
+  color: white;
+}
+
+#profilepicture{
+  color: white  ;
+}
+
+#avatar {
+  display: none;
+}
+
+#output {
+  vertical-align: middle;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/*home*/
 
 .img{
   padding-left: 100px;
