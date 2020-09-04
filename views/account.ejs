@@ -57,9 +57,9 @@
               <div class="form-group">
                 <label class="title" for="avatar" id="avatarLabel">Update Avatar</label>
                 <br>
-              <input type="file" name="avatar" id="profilepicture" onChange="loadFile(event)">
+              <input type="file" name="avatar" onChange="loadFile(event)">
               <br>
-              <img class="avatar" src="<%= user.photoURL %>" alt="Avatar" id="output">
+              <img class="avatar" src="<%= user.photoURL %>" alt="Avatar" id="profilepicture">
               
               </div>
             </div>
