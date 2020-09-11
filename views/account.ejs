@@ -1,9 +1,7 @@
 <%- include('partials/header'); %>
+<%- include('partials/navbar'); %>
     ​
-    <nav class="navbar fixed-top navbar-dark" style="background-color: black;">
-      <img src="images/logo.png" alt="logo" width="100" height="100">      
-   </nav>
-       ​
+   
       <% if (locals.errors && locals.errors.account) { %>
         <% locals.errors.account.forEach(function(error) { %>
           <p class="alert alert-primary" role="alert"><%= error %></p>
@@ -11,12 +9,43 @@
       <% } %>
       
       <div class="row">
-        
-        <div class="col-md-2 offset-sm-2" id="sidebar">
-          <div class="title">
-             <h4>Channels</h4>
+        <div class="col-md-2 offset-sm-2" id="sidebar"></div>
+          <% 
+          var channels = locals.channels
+          var owned = ("owned" in  channels) ? channels.owned : false
+          var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
+          %>
+          
+          <div id="owned-channels" class="user-channels">
+            <div class="title">
+              <h4>Channels</h4>
+            </div>
+            <% if (owned) { %>
+              <ul>
+              <% owned.forEach(function(channel) { %>
+                <li>
+                  <img src="<%= channel.image %>" alt="<%= channel.name %>">
+                  <a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
+                  <a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </li>
+              <% }) %>
+              </ul>
+            <% }  %>
           </div>
-       </div>
+          <div id="subscribed-channels" >
+            <h4>Subscribed Channels</h4>
+            <% if (subscribed) { %>
+              <ul>
+              <% subscribed.forEach(function(channel) { %>
+                <li>
+                  <img src="<%= channel.image %>" alt="<%= channel.name %>">
+                  <a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
+                </li>
+              <% }) %>
+              </ul>
+            <% }  %>
+          </div>
+      </div>
     
        <div class="divider"> </div>
 
@@ -31,7 +60,7 @@
 
             <div class="col-lg-6">
               <div class="form-group focused">
-                <label class="form-control-label" for="input-displayname">Display name</label>
+                <label class="title" for="input-displayname">Display name</label>
                 <div>
                   <input type="text" name="displayName" value="<%= locals.user.displayName %>">"
                 </div>
@@ -42,7 +71,7 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="form-control-label" for="input-email">Email address</label>
+                <label class="title" for="input-email">Email address</label>
                 <div>
                   <input type="email" name="email"  value="<%= locals.user.email %>">
                 </div>
@@ -55,7 +84,7 @@
               <div class="form-group">
                 <label class="title" for="avatar" id="avatarLabel">Update Avatar</label>
                 <br>
-              <input type="file" name="avatar" onChange="loadFile(event)">
+              <input type="file" name="avatar" onChange="loadFile(event)" class="text bg-white">
               <br>
               <img class="avatar" src="<%= user.photoURL %>" alt="Avatar" id="profilepicture">
               
@@ -64,6 +93,11 @@
             
             <br><br><br>
             
+            <% if (locals.account && locals.errors.xyz) { %>
+              <% locals.errors.account.forEach(function(error) { %>
+                <p class="alert alert-primary" role="alert"><%= error %></p>
+              <% }) %>
+            <% } %>
             <div class="col-lg-6">
               <button type="submit" id="update">Update</button>
             </div>
@@ -74,7 +108,7 @@
           <form action="/password" method="post">
                          
             <div class="col-lg-6">
-              <label class="form-control-label" for="input-password">Change password</label>
+              <label class="title" for="input-password">Change password</label>
               <div>
                 <input type="password" name="password" value="<%= locals.user.password %>">
               </div>
@@ -83,7 +117,7 @@
             <br>
 
             <div class="col-lg-6">
-              <label class="form-control-label" for="input-password">Change password</label>
+              <label class="title" for="input-password">Change password</label>
               <div>
                 <input type="password" name="passwordConfirm" placeholder="Confirm Password">
               </div>

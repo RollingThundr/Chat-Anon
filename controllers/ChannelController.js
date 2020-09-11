@@ -224,6 +224,8 @@ class ChannelController{
             channelData.users       = await AraDTUserModel.getUsers(currentUser.uid);
             channelData.subscribed  = await AraDTChannelModel.getSubscribedChannels();
             channelData.owned       = await AraDTChannelModel.getOwnedChannels();
+            console.log(channelData);
+            console.log(response.locals);
             return;
         } catch(error) {
             throw error;

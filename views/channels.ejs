@@ -2,19 +2,15 @@
 
 	  
 <%- include('partials/header'); %>
-    ​
-    <nav class="navbar fixed-top navbar-dark" style="background-color: black;">
-      <img src="images/logo.png" alt="logo" width="100" height="100">      
-   </nav>
+<%- include('partials/navbar'); %>
 
 
    <div class="row">   
 		<div class="col-md-2 offset-sm-2" id="sidebar">
 			
-
-				<% 
-			var channels = locals.channels
-			var owned = ("owned" in  channels) ? channels.owned : false
+			<% 
+			var channels = locals.channels;
+			var owned = (channels && "owned" in  channels) ? channels.owned : false
 			var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
 			%>
 			
@@ -68,6 +64,11 @@
 					<% users.forEach(function(user) { %>
 						<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">
 						<p><%= user.name %></p>
+					<% }) %>
+				<% } %>
+				<% if (locals.errors && locals.errors.channels) { %>
+					<% locals.errors.channels.forEach(function(error) { %>
+						<p class="alert alert-primary" role="alert"><%= error %></p>
 					<% }) %>
 				<% } %>
 				<button id="update" type="submit">Create</button>
