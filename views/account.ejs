@@ -1,7 +1,11 @@
 <%- include('partials/header'); %>
 <%- include('partials/navbar'); %>
-    ​
-   
+<%
+var channels = locals.channels
+var owned = ("owned" in  channels) ? channels.owned : false
+var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
+%>
+
       <% if (locals.errors && locals.errors.account) { %>
         <% locals.errors.account.forEach(function(error) { %>
           <p class="alert alert-primary" role="alert"><%= error %></p>
@@ -9,13 +13,8 @@
       <% } %>
       
       <div class="row">
-        <div class="col-md-2 offset-sm-2" id="sidebar"></div>
-          <% 
-          var channels = locals.channels
-          var owned = ("owned" in  channels) ? channels.owned : false
-          var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
-          %>
-          
+        <div class="col-md-2 offset-sm-2" id="sidebar">
+
           <div id="owned-channels" class="user-channels">
             <div class="title">
               <h4>Channels</h4>
@@ -32,6 +31,7 @@
               </ul>
             <% }  %>
           </div>
+
           <div id="subscribed-channels" >
             <h4>Subscribed Channels</h4>
             <% if (subscribed) { %>
@@ -39,103 +39,96 @@
               <% subscribed.forEach(function(channel) { %>
                 <li>
                   <img src="<%= channel.image %>" alt="<%= channel.name %>">
-                  <a href="/channel/<%= channel.slug %>/"><%= channel.name %></a>
+                  <a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
                 </li>
               <% }) %>
               </ul>
             <% }  %>
           </div>
+
       </div>
-    
-       <div class="divider"> </div>
 
-        <div class="col-md-6" id="main">
-          <form action="/account" method="post" enctype="multipart/form-data">
-            
-            <div class="title">
-              <h3>Profile</h3>
+      <div class="divider"></div>
+
+      <div class="col-md-6" id="main">
+
+        <form action="/account" method="post" enctype="multipart/form-data">
+          
+          <div class="title"><h3>Profile</h3></div>
+
+          <br><br>
+
+          <div class="col-lg-6">
+            <div class="form-group focused">
+              <label class="title" for="input-displayname">Display name</label>
+              <input type="text" name="displayName" value="<%= locals.user.displayName %>">"
             </div>
-
-            <br><br>
-
-            <div class="col-lg-6">
-              <div class="form-group focused">
-                <label class="title" for="input-displayname">Display name</label>
-                <div>
-                  <input type="text" name="displayName" value="<%= locals.user.displayName %>">"
-                </div>
-              </div>
-            </div>
-  
-            <br>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label class="title" for="input-email">Email address</label>
-                <div>
-                  <input type="email" name="email"  value="<%= locals.user.email %>">
-                </div>
-              </div>
-            </div>     
-
-            <br>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label class="title" for="avatar" id="avatarLabel">Update Avatar</label>
-                <br>
-              <input type="file" name="avatar" onChange="loadFile(event)" class="text bg-white">
-              <br>
-              <img class="avatar" src="<%= user.photoURL %>" alt="Avatar" id="profilepicture">
-              
-              </div>
-            </div>
-            
-            <br><br><br>
-            
-            <% if (locals.account && locals.errors.xyz) { %>
-              <% locals.errors.account.forEach(function(error) { %>
-                <p class="alert alert-primary" role="alert"><%= error %></p>
-              <% }) %>
-            <% } %>
-            <div class="col-lg-6">
-              <button type="submit" id="update">Update</button>
-            </div>
-          </form> 
+          </div>
 
           <br>
 
-          <form action="/password" method="post">
-                         
-            <div class="col-lg-6">
-              <label class="title" for="input-password">Change password</label>
-              <div>
-                <input type="password" name="password" value="<%= locals.user.password %>">
-              </div>
-            </div> 
-
-            <br>
-
-            <div class="col-lg-6">
-              <label class="title" for="input-password">Change password</label>
-              <div>
-                <input type="password" name="passwordConfirm" placeholder="Confirm Password">
-              </div>
-            </div> 
-
-            <br><br><br>
-              
-            <div class="col-lg-6">
-              <button type="submit" id="update">Update Password</button>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="title" for="input-email">Email address</label>
+              <input type="email" name="email"  value="<%= locals.user.email %>">
             </div>
-                   
-          </form>
+          </div>     
 
-          <br>        
+          <br>
 
-        </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="title" for="avatar" id="avatarLabel">Update Avatar</label>
+              <br>
+              <input type="file" name="avatar" onChange="loadFile(event)" class="text bg-white">
+              <br>
+              <img class="avatar" src="<%= user.photoURL %>" alt="Avatar" id="profilepicture">
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+
+          <% if (locals.account && locals.errors.password) { %>
+            <% locals.errors.account.forEach(function(error) { %>
+              <p class="alert alert-primary" role="alert"><%= error %></p>
+            <% }) %>
+          <% } %>
+
+          <div class="col-lg-6">
+            <button type="submit" id="update">Update</button>
+          </div>
+
+        </form> 
+
+        <br>
+
+        <form action="/password" method="post">    
+
+          <div class="col-lg-6">
+            <label class="title" for="input-password">Change password</label>
+            <input type="password" name="password" value="<%= locals.user.password %>">
+          </div> 
+
+          <br>
+
+          <div class="col-lg-6">
+            <label class="title" for="input-password">Change password</label>
+            <input type="password" name="passwordConfirm" placeholder="Confirm Password">
+          </div> 
+
+          <br>
+          <br>
+          <br>
+
+          <div class="col-lg-6">
+            <button type="submit" id="update">Update Password</button>
+          </div>
+
+        </form>
+        <br>        
+      </div>
      </div>
-     
-  </body>
-</html>
+<%- include('partials/footer'); %>
 ​

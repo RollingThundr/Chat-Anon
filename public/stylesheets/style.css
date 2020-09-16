@@ -131,38 +131,37 @@ h4 {
 * {box-sizing: border-box;}
 ​
 .input[type=text], select, textarea {
-width: 100%;
-padding: 12px;
-border: 1px solid #ccc;
-border-radius: 4px;
-box-sizing: border-box;
-margin-top: 6px;
-margin-bottom: 16px;
-resize: vertical;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 ​
 .input[type=submit] {
-color: white;
-padding: 12px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 ​
 .input[type=submit]:hover {
-background-color: white;
+  background-color: white;
 }
 ​
 .container {
-border-radius: 5px;
-padding: 20px;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 #mainAccount { 
-background-color: black;
-height: 100%;
-width: 1000px;
-
+  background-color: black;
+  height: 100%;
+  width: 1000px;
 }
 
 .form-control-label {
@@ -170,7 +169,7 @@ width: 1000px;
 }
 
 #profilepicture{
-  color: white  ;
+  color: white;
   padding-top: 50px;
   padding-bottom: 50px;
   vertical-align: middle;
@@ -179,13 +178,10 @@ width: 1000px;
   border-radius: 50%;
   object-fit: cover;
 }
-}
 
 #avatar {
   display: none;
 }
-
-
 
 /*home*/
 
@@ -243,10 +239,7 @@ width: 1000px;
   border-radius: 15px;
   border-color:#d2d2d2;
   border-width: 5px;
-  
-  
 }
-
 
 pre{
   color: white;
