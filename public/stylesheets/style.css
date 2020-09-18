@@ -179,11 +179,15 @@ h4 {
   object-fit: cover;
 }
 
-#avatar {
-  display: none;
+.avatar {
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/*home*/
+/*account*/
 
 .img{
   padding-left: 100px;
@@ -226,6 +230,19 @@ h4 {
   border-width: 5px;
 }
 
+.channelimg{
+  height: 40px;
+  width: 40px; 
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.channelname{
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 10px;
+}
+
 /*channels*/
 
 #mainChannels {
@@ -243,4 +260,30 @@ h4 {
 
 pre{
   color: white;
+}
+
+.direction{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#create{
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* navbar */
+
+.navitems{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#logout{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
