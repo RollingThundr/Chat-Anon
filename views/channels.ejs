@@ -50,8 +50,8 @@ var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
 
 				<div class="title"><h3>Create Channel</h3></div>
 
-				<% if (locals.errors && locals.errors.channels && locals.errors.channels.general) { %>
-					<% locals.errors.channels.general.forEach(function(error) { %>
+				<% if (locals.errors && locals.errors.channels) { %>
+					<% locals.errors.channels.forEach(function(error) { %>
 						<p class="alert alert-primary" role="alert"><%= error %></p>
 					<% }) %>
 				<% } %>
@@ -70,9 +70,11 @@ var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
 						</div>
 					<% }) %>
 				<% } %>
+				
+				<br><br>
 
 				<div class="form-group">
-					<label class="control-label">Add an Image</label>
+					<label class="title">Add an Image</label>
 					<div class="input-group-append">
 					  <div class="custom-file">
 						<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
