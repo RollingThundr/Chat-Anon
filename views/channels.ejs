@@ -50,11 +50,7 @@ var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
 
 				<div class="title"><h3>Create Channel</h3></div>
 
-				<% if (locals.errors && locals.errors.channels) { %>
-					<% locals.errors.channels.forEach(function(error) { %>
-						<p class="alert alert-primary" role="alert"><%= error %></p>
-					<% }) %>
-				<% } %>
+				
 
 				<div class="form-group">
 					<label class="title">Display Name</label>

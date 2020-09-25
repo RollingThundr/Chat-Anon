@@ -5,13 +5,7 @@ var channels = locals.channels
 var owned = ("owned" in  channels) ? channels.owned : false
 var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
 %>
-
-      <% if (locals.errors && locals.errors.account) { %>
-        <% locals.errors.account.forEach(function(error) { %>
-          <p class="alert alert-primary" role="alert"><%= error %></p>
-        <% }) %>
-      <% } %>
-      
+     
       <div class="row">
         <div class="col-md-2 offset-sm-2" id="sidebar">
 
@@ -61,6 +55,12 @@ var subscribed = ("subscribed" in  channels) ? channels.subscribed : false
           <div class="title"><h3>Profile</h3></div>
 
           <br><br>
+
+          <% if (locals.errors && locals.errors.profile) { %>
+            <% locals.errors.profile.forEach(function(error) { %>
+              <p class="alert alert-primary" role="alert"><%= error %></p>
+            <% }) %>
+          <% } %>
 
           <div class="col-lg-6">
             <div class="form-group focused">
